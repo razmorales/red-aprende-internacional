@@ -1,0 +1,81 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.83in]{geometry}
+\usepackage{xcolor,hyperref,fancyhdr,lmodern}
+\definecolor{azul}{HTML}{34599B}
+\hypersetup{colorlinks=true,urlcolor=azul}
+\definecolor{tinta}{HTML}{173250}
+\definecolor{fondo}{HTML}{EDF2FC}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small\textcolor{azul}{Red Aprende Internacional · Equipo III}}
+\fancyfoot[R]{\small\textcolor{azul}{\thepage}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newcommand{\apartado}[1]{\subsection*{\textcolor{azul}{#1}}}
+\begin{document}
+\noindent\colorbox{fondo}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+\vspace{8pt}\hspace{8pt}\textcolor{azul}{\small\bfseries 502-B · EQUIPO III}\par
+\hspace{8pt}{\LARGE\bfseries\textcolor{tinta}{Acta de alcance}}\par
+\hspace{8pt}{\large Red Aprende Internacional}\par
+\hspace{8pt}{\small Versión 1.1 · 3 de noviembre de 2026 · Alcance aceptado}\par\vspace{8pt}}}
+\medskip
+
+\textbf{Clienta} Verónica Castillo.\par
+\textbf{Líder del equipo} Raziel Morales Pérez.
+
+\apartado{Qué queremos resolver}
+En la entrevista, Verónica nos explicó que hoy las listas están separadas, hay diferencias entre los registros de asistencia y evaluación, se confunden los horarios entre países y las constancias requieren revisión manual. Nuestra propuesta reúne el recorrido del curso en un sistema que permita saber quién registró o corrigió cada dato.
+
+\apartado{Qué incluirá la primera versión}
+\textbf{Cursos, grupos y horarios.} El piloto abarcará Ciudad de México, Bogotá y Madrid. Cada grupo tendrá una sede organizadora y usará su zona horaria como referencia. Podrán participar estudiantes y docentes de los tres países. Mostraremos la fecha, hora y zona de la sede, junto con la equivalencia para el usuario, incluido cualquier cambio de fecha. La conversión tendrá en cuenta la fecha de la sesión y las reglas de cada zona.
+
+\textbf{Inscripción y cupo.} Si un grupo está lleno, mostraremos ese estado y permitiremos consultar otros grupos disponibles del mismo curso. Aunque dos personas soliciten el último lugar al mismo tiempo, solo una podrá reservarlo. Mientras el pago simulado esté pendiente, el lugar se reserva durante 30 minutos desde la solicitud y el estudiante puede ver cuándo vence.
+
+\textbf{Pago simulado.} La inscripción se confirma con un pago aprobado dentro del plazo de reserva. Un rechazo, vencimiento o cancelación libera el lugar sin asignarlo automáticamente. Si el pago se aprueba tarde, guardamos ese resultado sin confirmar la inscripción y pedimos iniciar una nueva solicitud. De cada intento conservamos identificador, importe, moneda, estado y fechas. Si se cancela una inscripción ya pagada, registramos la cancelación y conservamos el pago original.
+
+\textbf{Aprobación y constancia.} Para el piloto se requieren al menos 80\% de asistencia y 70/100 de calificación final. Deben cumplirse ambas condiciones y no se redondea hacia arriba una asistencia inferior al mínimo. Se registra presente o ausente por sesión y una calificación final. Los umbrales pueden variar entre cursos. Se fijan antes de abrir inscripciones, aplican a todos los grupos del curso y quedan protegidos contra cambios ordinarios. Al finalizar el grupo y completar los registros, el sistema verifica los requisitos antes de permitir la emisión. La constancia incluye un folio único, estudiante, curso, grupo y fecha. Repetir la operación no genera duplicados.
+
+\newpage
+\apartado{Quién puede hacer qué}
+\textbf{Dirección Internacional} consulta toda la red, crea y publica cursos y define los criterios de aprobación. \textbf{Coordinación de País} abre grupos de cursos publicados en su país, asigna sede y docente habilitado y consulta la operación nacional. \textbf{Administración de Sede} gestiona inscripciones, cupos, horarios y enlaces de sus grupos, consulta sus pagos simulados y emite constancias cuando el sistema confirma el cumplimiento.
+
+El \textbf{docente} registra asistencia y calificación de sus grupos asignados, aunque resida en otro país. El \textbf{estudiante} consulta la oferta, solicita su inscripción, realiza el pago simulado y consulta sus propios horarios, resultados y constancias.
+
+Antes del cierre académico, el docente puede corregir sus registros. Se conserva el valor anterior, el nuevo, el motivo, el usuario y la fecha. Después del cierre se requiere autorización de Coordinación de País y se conserva el historial. Una persona no puede autorizar su propia solicitud. Si una corrección afecta una constancia emitida, esta se invalida con motivo y, cuando corresponda, se emite otra vinculada a la anterior.
+
+\apartado{Límites y prioridad de la entrega}
+Quedan fuera la lista de espera, los cargos y devoluciones bancarias reales, las videollamadas propias, el diseño de exámenes y las fórmulas múltiples de evaluación y la conversión de divisas. Para las sesiones se usarán enlaces externos.
+
+La prioridad es mostrar el recorrido completo con datos ficticios, desde la publicación del curso hasta la constancia. El prototipo incluirá una sesión consultada desde los tres países, un grupo lleno, un pago rechazado y un estudiante que no alcanza la asistencia mínima.
+
+\apartado{Cierre de los pendientes}
+\textbf{Asistencia.} Una sesión cancelada por la institución se excluye del cálculo y no genera ausencias. Si se reprograma, conservamos la referencia a la sesión original y contamos solo la celebrada. Cada sesión celebrada cuenta para los estudiantes inscritos que debían asistir. Si faltan, registramos una ausencia. Si no hay sesiones celebradas, mostramos «Asistencia no calculable» y bloqueamos la emisión de constancias.
+
+\textbf{Pago simulado.} Dirección Internacional fija un precio ficticio por grupo antes de abrir inscripciones. Se mantiene fijo durante el piloto y se identifica como simulado. La moneda depende de la sede organizadora: MXN en Ciudad de México, COP en Bogotá y EUR en Madrid. El estudiante ve el importe y la moneda antes de solicitar su inscripción y paga en la moneda del grupo, incluso si participa desde otro país. Cada intento conserva su importe y moneda originales aunque después cambie el catálogo.
+
+\newpage
+\apartado{Criterios de aceptación de las precisiones}
+\begin{enumerate}
+\item \textbf{Cancelación y reprogramación.} Si un estudiante asiste a cuatro sesiones y la institución cancela la quinta, su asistencia es 4/4 (100\%) y no se genera ausencia por la cancelación. Si la quinta se reprograma y el estudiante falta, su asistencia es 4/5 (80\%). Se conserva la referencia a la sesión original y solo se cuenta la celebrada.
+\item \textbf{Sin sesiones celebradas.} Si ninguna sesión se celebra, el sistema muestra «Asistencia no calculable» e impide emitir la constancia.
+\item \textbf{Precio y moneda visibles.} Antes de abrir inscripciones, Dirección Internacional fija un importe ficticio por grupo en la moneda de su sede. Al consultar un grupo de Madrid desde México, el estudiante ve el importe en EUR antes de solicitar la inscripción. El pago simulado conserva esa moneda sin conversión. El mismo criterio aplica a los grupos de Ciudad de México en MXN y Bogotá en COP.
+\item \textbf{Historial del intento.} Si cambia el catálogo después de un intento de pago, al consultar ese intento se muestran el importe y la moneda con los que inició. El precio del grupo permanece fijo durante el piloto.
+\end{enumerate}
+
+\apartado{Aceptación del alcance}
+El 3 de noviembre de 2026, Verónica Castillo aceptó el alcance con las dos precisiones que incorporamos en esta versión. Los dos pendientes de la versión 1 quedan resueltos. El equipo definirá los importes ficticios en los datos de prueba.
+
+\begin{quote}
+«Esta respuesta constituye mi aceptación del alcance con los cambios indicados.»
+\end{quote}
+La aceptación del sistema queda sujeta a demostrar el cumplimiento de los requisitos y los casos de excepción.
+
+\small
+\textbf{Evidencia en Slack}\par
+\href{https://502-b-3-k3h8956.slack.com/archives/C0C0WDPV58T/p1793724895351619}{Acta versión 1 enviada por el equipo}\par
+\href{https://502-b-3-k3h8956.slack.com/archives/C0C0WDPV58T/p1793747433731149}{Aceptación del alcance y precisiones de Verónica, 3 de noviembre de 2026}\par
+\href{https://502-b-3-k3h8956.slack.com/archives/C0C0WDPV58T/p1793722197820009}{Respuesta a las seis preguntas de la entrevista}
+\end{document}

@@ -1,0 +1,18 @@
+# Archivos locales y temporales
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+
+# Credenciales y configuración local
+.env
+.env.*
+!.env.example
+
+# Compilación de LaTeX
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
