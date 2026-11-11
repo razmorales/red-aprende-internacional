@@ -9,6 +9,7 @@ Se completó la etapa de descubrimiento y acuerdo del segundo parcial. El alcanc
 ## Documentación
 
 - [Entrega del segundo parcial](docs/502_B_3.pdf). Incluye entrevistas, SRS inicial, prototipo, metodología, métricas, plan de desarrollo y acta con evidencia de aceptación.
+- [Prototipo visual completo](docs/Prototipo_Red_Aprende_Internacional.pdf). Contiene las 31 diapositivas de la versión 0.3, con el recorrido, las pantallas y los casos excepcionales del piloto.
 - [Acta de alcance 1.1](docs/alcance/Acta_de_alcance_v1.1.pdf).
 - [Fuente LaTeX del acta](docs/alcance/Acta_de_alcance_v1.1.tex).
 
