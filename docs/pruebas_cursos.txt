@@ -1,0 +1,15 @@
+test_create_persists_after_reopening (test_courses.CourseTests.test_create_persists_after_reopening) ... ok
+test_draft_update_records_before_and_after (test_courses.CourseTests.test_draft_update_records_before_and_after) ... ok
+test_enrollment_failure_rolls_back_criteria_lock (test_courses.CourseTests.test_enrollment_failure_rolls_back_criteria_lock) ... ok
+test_inactive_user_is_denied (test_courses.CourseTests.test_inactive_user_is_denied) ... ok
+test_invalid_values_do_not_write (test_courses.CourseTests.test_invalid_values_do_not_write) ... ok
+test_locked_update_rejected_without_mutation (test_courses.CourseTests.test_locked_update_rejected_without_mutation) ... ok
+test_publish_is_idempotent_and_visible (test_courses.CourseTests.test_publish_is_idempotent_and_visible) ... ok
+test_published_criteria_editable_before_enrollment (test_courses.CourseTests.test_published_criteria_editable_before_enrollment) ... ok
+test_unauthorized_create_does_not_write (test_courses.CourseTests.test_unauthorized_create_does_not_write) ... ok
+test_unknown_course_does_not_add_events (test_courses.CourseTests.test_unknown_course_does_not_add_events) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.125s
+
+OK

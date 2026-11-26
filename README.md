@@ -51,7 +51,7 @@ Las cinco métricas seleccionadas son tiempo de respuesta, tiempo de corrección
 
 ## Desarrollo
 
-Las instrucciones de instalación, tecnologías y comandos de ejecución se añadirán al iniciar la implementación. Actualmente no existe una aplicación ejecutable en este repositorio.
+Se preparó un módulo local de configuración y publicación de cursos con Python y SQLite como propuesta técnica pendiente de acuerdo del equipo. Las instrucciones, resultados reales de pruebas y límites de integración están en [Avance de Raziel](docs/Avance_Raziel.md). La aplicación web y los escenarios completos de la clienta siguen pendientes.
 
 ## Uso de IA
 

@@ -1,0 +1,7 @@
+{
+  "name": "Introducción a Python",
+  "description": "Curso piloto de Red Aprende Internacional",
+  "objectives": "Resolver ejercicios básicos de programación",
+  "attendance_min": 80,
+  "grade_min": 70
+}
