@@ -27,7 +27,7 @@ Ejecuciones en Windows con Python 3.12.10, verificadas en las capturas de PowerS
 | Pagos (1533f32) | 35 | 2.918 s | OK |
 | Demostración (8c6d6cd) | 6 escenarios locales | No medido como total | PASS en los seis |
 
-Las 35 pruebas incluyen 10 de cursos y 25 de nuestra aportación. La revisión de otro integrante y las pruebas desde la aplicación integrada siguen pendientes. La evidencia detallada `evidencia_fabian.json` fue generada en la computadora de Fabián; falta incorporarla al repositorio.
+Las 35 pruebas incluyen 10 de cursos y 25 de nuestra aportación. La revisión de otro integrante y las pruebas desde la aplicación integrada siguen pendientes. La evidencia detallada fue generada en la computadora de Fabián el 27 de noviembre a las 20:38:58 UTC. Se conserva en [evidencia_fabian.json](evidencias/evidencia_fabian.json), con copia íntegra verificada (SHA-256: 0759e9aa134afe1aa6b74b06dc0b9312dba7446de39e7e597ba0dbc59337eca9).
 
 ## Trazabilidad de pruebas y demostraciones
 
@@ -57,7 +57,7 @@ Responsable: Fabián. Medición local del 27 de noviembre, SQLite en archivo tem
 | Consultar cursos | 20 | 0.145 | 0.136 | 0.197 |
 | Registrar reserva | 20 | 7.335 | 7.049 | 8.617 |
 
-Fuente: salida de examples.demo_fabian y JSON local. Son mediciones preliminares; falta cotejar la meta y condiciones exactas del documento vigente y repetir desde la aplicación integrada según la frecuencia acordada. No se afirma cumplimiento de una meta no verificada. El tiempo de la suite de pruebas no es tiempo de respuesta de una operación.
+Fuente: salida de examples.demo_fabian y [JSON original](evidencias/evidencia_fabian.json). Son mediciones preliminares; falta cotejar la meta y condiciones exactas del documento vigente y repetir desde la aplicación integrada según la frecuencia acordada. No se afirma cumplimiento de una meta no verificada. El tiempo de la suite de pruebas no es tiempo de respuesta de una operación.
 
 ### Defect Metrics
 
