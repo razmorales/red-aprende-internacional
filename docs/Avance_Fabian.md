@@ -27,7 +27,7 @@ Ejecuciones en Windows con Python 3.12.10, verificadas en las capturas de PowerS
 | Pagos (1533f32) | 35 | 2.918 s | OK |
 | Demostración (8c6d6cd) | 6 escenarios locales | No medido como total | PASS en los seis |
 
-Las 35 pruebas incluyen 10 de cursos y 25 de nuestra aportación. La revisión de otro integrante y las pruebas desde la aplicación integrada siguen pendientes. La evidencia detallada fue generada en la computadora de Fabián el 27 de noviembre a las 20:38:58 UTC. Se conserva en [evidencia_fabian.json](evidencias/evidencia_fabian.json), con copia íntegra verificada (SHA-256: 0759e9aa134afe1aa6b74b06dc0b9312dba7446de39e7e597ba0dbc59337eca9).
+Las 35 pruebas incluyen 10 de cursos y 25 de nuestra aportación. Tras añadir RF-005, la suite de 39 pruebas (29 propias y 10 de cursos) terminó OK en Windows en 3.480 s, según captura del 27 de noviembre, versión 5baa234. La revisión de otro integrante y las pruebas desde la aplicación integrada siguen pendientes. La evidencia detallada fue generada en la computadora de Fabián el 27 de noviembre a las 20:38:58 UTC. Se conserva en [evidencia_fabian.json](evidencias/evidencia_fabian.json), con copia íntegra verificada (SHA-256: 0759e9aa134afe1aa6b74b06dc0b9312dba7446de39e7e597ba0dbc59337eca9).
 
 ## Trazabilidad de pruebas y demostraciones
 
@@ -57,11 +57,11 @@ Responsable: Fabián. Medición local del 27 de noviembre, SQLite en archivo tem
 | Consultar cursos | 20 | 0.145 | 0.136 | 0.197 |
 | Registrar reserva | 20 | 7.335 | 7.049 | 8.617 |
 
-Fuente: salida de examples.demo_fabian y [JSON original](evidencias/evidencia_fabian.json). Son mediciones preliminares; falta cotejar la meta y condiciones exactas del documento vigente y repetir desde la aplicación integrada según la frecuencia acordada. No se afirma cumplimiento de una meta no verificada. El tiempo de la suite de pruebas no es tiempo de respuesta de una operación.
+Fuente: salida de examples.demo_fabian y [JSON original](evidencias/evidencia_fabian.json). Son mediciones preliminares secuenciales. La meta y condiciones exactas se cotejaron posteriormente con el SRS 1.1 (páginas 26 y 45–46); véase la prueba de carga añadida abajo. No se afirma cumplimiento de una meta no verificada. El tiempo de la suite de pruebas no es tiempo de respuesta de una operación.
 
 ### Defect Metrics
 
-Responsable: Fabián. En la última ejecución se observaron 0 fallos de 35 pruebas y 0 fallos de 6 escenarios. No se ha validado un inventario global de defectos abiertos, por lo que no se puede afirmar que el sistema tenga cero defectos. Clasificar cada defecto reproducible por gravedad, responsable, estado, evidencia y corrección verificada.
+Responsable: Fabián. Se observaron 0 fallos de 39 pruebas en la última suite, 0 fallos de 6 escenarios en la demostración previa y 0 fallos de 200 operaciones en la prueba de carga. No se ha validado un inventario global de defectos abiertos, por lo que no se puede afirmar que el sistema tenga cero defectos. Clasificar cada defecto reproducible por gravedad, responsable, estado, evidencia y corrección verificada.
 
 | ID | Hallazgo o limitación | Clasificación | Estado |
 |---|---|---|---|
@@ -113,3 +113,25 @@ Riesgos: demora de respuestas sobre reglas límite, contratos incompatibles, ret
 27 nov: grupos y precios (ec27868), pruebas de grupos (4a0a66a), reservas (cfe5c4b), pruebas de reservas (2b84d14), pagos (b046a3e), pruebas de pagos (1533f32), demostrador y medición (8c6d6cd). Afectan RF-002, RF-003, RF-004, DAT-003, DAT-005, DAT-006 y DAT-007; cotejar IDs con la versión vigente. Motivo: materializar las reglas del alcance y verificar excepciones. No se modifica el PDF histórico.
 
 Se utilizó ChatGPT (OpenAI) para proponer la estructura, generar código, pruebas y documentación y registrar resultados. Fabián descargó los cambios y ejecutó las pruebas y demostraciones en su entorno Windows. La revisión humana detallada del código, la prueba por otro integrante, la integración y la aceptación por la clienta siguen pendientes. Los resultados se transcribieron de capturas reales; no se simularon tiempos ni se afirmó una revisión no realizada.
+
+
+## Actualización del 27 de noviembre: RF-005 y carga concurrente
+
+- RF-005 / CA-005 / CP-005: app/group_catalog.py y tests/test_group_catalog.py (15edb24, 0b09963) incorporan consulta de grupos por ámbito, curso, sede, moneda, disponibilidad vigente y filtro de lugares libres. Cuatro pruebas nuevas OK: permisos, datos visibles, cambios de disponibilidad sin escrituras y filtro vacío. Los horarios de sesiones y los mensajes de interfaz aún no se han integrado; CP-005 tiene cobertura local parcial.
+- examples/load_fabian.py (5baa234): ejecutar `python -m examples.load_fabian --output evidencia_carga_fabian.json`. La evidencia del 27 de noviembre a las 22:26:32 UTC está en [evidencia_carga_fabian.json](evidencias/evidencia_carga_fabian.json), copia íntegra verificada por SHA-256: cf52c1960008dd042dfe0573d4b71b386feda36003bd0961987f57818e2bd630.
+- Meta interna del SRS: P95 <= 1000 ms por operación, 20 usuarios simultáneos, 100 cursos, 300 grupos y 3000 inscripciones iniciales. Prueba local: Windows 10, Python 3.12.10, SQLite 3.49.1; 20 hilos con conexión independiente y barrera por operación, cinco rondas, 100 muestras por operación. Datos sintéticos sembrados fuera de la medición. P95 por rango más próximo (ceil(0.95*n)), recalculado sobre muestras originales.
+
+| Operación | Éxitos/intentos | Media (ms) | P95 (ms) | Máximo (ms) | Meta local |
+|---|---:|---:|---:|---:|---|
+| Consulta de cursos | 100/100 | 73.728 | 85.439 | 87.360 | Cumple |
+| Solicitud de inscripción (reserva) | 100/100 | 205.353 | 408.251 | 526.721 | Cumple |
+
+Resultado: 3100 inscripciones y 3100 intentos al final; cero grupos con sobrecupo, consistencia verificada. Los tiempos no incluyen HTTP, interfaz ni autenticación; falta repetir en el sistema integrado. La meta de defectos del SRS es cero críticos y mayores abiertos al cierre de ciclo. No se observaron fallos en estas ejecuciones locales, pero el inventario del equipo y la validación independiente siguen pendientes.
+
+## Cotejo del SRS 1.1: asuntos de integración
+
+- DAT-007 / CP-007: falta comprobar existencia del participante contra el módulo de usuarios; las pruebas actuales usan identidad ficticia confiable. No marcar aprobado completo.
+- DAT-006: la ficha permite varios intentos por inscripción; la implementación conserva un intento por solicitud y crea nueva solicitud para reintentos, conforme al flujo del acta 1.1. Alinear cardinalidad documental con el equipo, sin afirmar nueva aceptación de la clienta.
+- RF-002: la regla del curso publicado y la habilitación de docentes están implementadas mediante identidad y callback de prueba; falta validación del directorio real y horarios.
+- El prototipo muestra 120 EUR en Madrid; la demostración funcional previa empleó 45.50 EUR como otro dato ficticio. La carga usa 120 EUR, 500 MXN y 150000 COP. Unificar datos de demostración final con José Ángel sin modificar evidencias históricas.
+- Uso de IA: ChatGPT propuso y generó catálogo, pruebas y script de carga; Fabián ejecutó los comandos en Windows y entregó el JSON original. Se verificaron las 200 muestras y sus estadísticas. Pendiente revisión humana independiente.
