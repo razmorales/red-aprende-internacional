@@ -1,0 +1,1664 @@
+{
+  "executed_at": "2026-11-27T22:26:32.740743+00:00",
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.10",
+    "sqlite": "3.49.1"
+  },
+  "setup": {
+    "initial": {
+      "courses": 100,
+      "groups": 300,
+      "enrollments": 3000,
+      "payment_attempts": 3000
+    },
+    "workers": 20,
+    "rounds": 5,
+    "samples_per_operation": 100,
+    "percentile_method": "Rango más próximo: ceil(0.95*n)",
+    "fixture": "Inserciones SQL sintéticas, fuera de la medición.",
+    "measurement": "Funciones Python/SQLite; conexiones abiertas antes de medir. Barrera por operación y ronda. Sin HTTP/UI."
+  },
+  "metrics": {
+    "course_query": {
+      "attempts": 100,
+      "successful": 100,
+      "failed": 0,
+      "p95_ms": 85.439,
+      "mean_ms": 73.728,
+      "max_ms": 87.36,
+      "target_ms": 1000,
+      "target_met_local": true,
+      "samples": [
+        {
+          "operation": "course_query",
+          "user": 0,
+          "round": 1,
+          "ms": 82.7054,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 0,
+          "round": 2,
+          "ms": 72.7097,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 0,
+          "round": 3,
+          "ms": 85.2597,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 0,
+          "round": 4,
+          "ms": 72.9311,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 0,
+          "round": 5,
+          "ms": 49.4734,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 1,
+          "round": 1,
+          "ms": 80.8582,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 1,
+          "round": 2,
+          "ms": 66.4664,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 1,
+          "round": 3,
+          "ms": 83.7957,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 1,
+          "round": 4,
+          "ms": 71.368,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 1,
+          "round": 5,
+          "ms": 68.1707,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 2,
+          "round": 1,
+          "ms": 79.5242,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 2,
+          "round": 2,
+          "ms": 72.6802,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 2,
+          "round": 3,
+          "ms": 85.44,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 2,
+          "round": 4,
+          "ms": 67.5847,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 2,
+          "round": 5,
+          "ms": 64.8958,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 3,
+          "round": 1,
+          "ms": 82.2822,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 3,
+          "round": 2,
+          "ms": 71.6304,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 3,
+          "round": 3,
+          "ms": 80.8883,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 3,
+          "round": 4,
+          "ms": 72.5327,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 3,
+          "round": 5,
+          "ms": 65.173,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 4,
+          "round": 1,
+          "ms": 78.0681,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 4,
+          "round": 2,
+          "ms": 71.0585,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 4,
+          "round": 3,
+          "ms": 84.141,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 4,
+          "round": 4,
+          "ms": 72.0845,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 4,
+          "round": 5,
+          "ms": 66.0775,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 5,
+          "round": 1,
+          "ms": 80.7452,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 5,
+          "round": 2,
+          "ms": 74.255,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 5,
+          "round": 3,
+          "ms": 73.7371,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 5,
+          "round": 4,
+          "ms": 71.9194,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 5,
+          "round": 5,
+          "ms": 64.8319,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 6,
+          "round": 1,
+          "ms": 79.1129,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 6,
+          "round": 2,
+          "ms": 71.888,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 6,
+          "round": 3,
+          "ms": 85.7385,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 6,
+          "round": 4,
+          "ms": 72.1234,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 6,
+          "round": 5,
+          "ms": 40.8038,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 7,
+          "round": 1,
+          "ms": 81.5595,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 7,
+          "round": 2,
+          "ms": 65.0667,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 7,
+          "round": 3,
+          "ms": 85.4395,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 7,
+          "round": 4,
+          "ms": 72.6674,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 7,
+          "round": 5,
+          "ms": 63.6933,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 8,
+          "round": 1,
+          "ms": 82.7298,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 8,
+          "round": 2,
+          "ms": 72.9481,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 8,
+          "round": 3,
+          "ms": 84.7055,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 8,
+          "round": 4,
+          "ms": 68.2279,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 8,
+          "round": 5,
+          "ms": 63.818,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 9,
+          "round": 1,
+          "ms": 80.7547,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 9,
+          "round": 2,
+          "ms": 64.9294,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 9,
+          "round": 3,
+          "ms": 83.8714,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 9,
+          "round": 4,
+          "ms": 72.1786,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 9,
+          "round": 5,
+          "ms": 67.2193,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 10,
+          "round": 1,
+          "ms": 82.9492,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 10,
+          "round": 2,
+          "ms": 72.4051,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 10,
+          "round": 3,
+          "ms": 85.3948,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 10,
+          "round": 4,
+          "ms": 72.9707,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 10,
+          "round": 5,
+          "ms": 67.3584,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 11,
+          "round": 1,
+          "ms": 79.6464,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 11,
+          "round": 2,
+          "ms": 74.067,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 11,
+          "round": 3,
+          "ms": 81.5022,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 11,
+          "round": 4,
+          "ms": 72.7766,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 11,
+          "round": 5,
+          "ms": 60.6055,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 12,
+          "round": 1,
+          "ms": 73.4245,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 12,
+          "round": 2,
+          "ms": 72.2902,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 12,
+          "round": 3,
+          "ms": 84.7436,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 12,
+          "round": 4,
+          "ms": 72.6022,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 12,
+          "round": 5,
+          "ms": 60.9279,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 13,
+          "round": 1,
+          "ms": 80.513,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 13,
+          "round": 2,
+          "ms": 69.8025,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 13,
+          "round": 3,
+          "ms": 80.3991,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 13,
+          "round": 4,
+          "ms": 70.0044,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 13,
+          "round": 5,
+          "ms": 62.574,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 14,
+          "round": 1,
+          "ms": 82.6321,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 14,
+          "round": 2,
+          "ms": 68.372,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 14,
+          "round": 3,
+          "ms": 85.1107,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 14,
+          "round": 4,
+          "ms": 72.7884,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 14,
+          "round": 5,
+          "ms": 62.6267,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 15,
+          "round": 1,
+          "ms": 81.4424,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 15,
+          "round": 2,
+          "ms": 72.4299,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 15,
+          "round": 3,
+          "ms": 85.8927,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 15,
+          "round": 4,
+          "ms": 73.026,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 15,
+          "round": 5,
+          "ms": 67.108,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 16,
+          "round": 1,
+          "ms": 83.6921,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 16,
+          "round": 2,
+          "ms": 73.7114,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 16,
+          "round": 3,
+          "ms": 86.1315,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 16,
+          "round": 4,
+          "ms": 71.2291,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 16,
+          "round": 5,
+          "ms": 66.4452,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 17,
+          "round": 1,
+          "ms": 83.3003,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 17,
+          "round": 2,
+          "ms": 73.3095,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 17,
+          "round": 3,
+          "ms": 83.6394,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 17,
+          "round": 4,
+          "ms": 48.4054,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 17,
+          "round": 5,
+          "ms": 58.0178,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 18,
+          "round": 1,
+          "ms": 82.3476,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 18,
+          "round": 2,
+          "ms": 74.4015,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 18,
+          "round": 3,
+          "ms": 77.9645,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 18,
+          "round": 4,
+          "ms": 71.8633,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 18,
+          "round": 5,
+          "ms": 55.4082,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 19,
+          "round": 1,
+          "ms": 81.9039,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 19,
+          "round": 2,
+          "ms": 74.5055,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 19,
+          "round": 3,
+          "ms": 87.3597,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 19,
+          "round": 4,
+          "ms": 73.415,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "course_query",
+          "user": 19,
+          "round": 5,
+          "ms": 64.6215,
+          "ok": true,
+          "error": null
+        }
+      ]
+    },
+    "enrollment_reservation": {
+      "attempts": 100,
+      "successful": 100,
+      "failed": 0,
+      "p95_ms": 408.251,
+      "mean_ms": 205.353,
+      "max_ms": 526.721,
+      "target_ms": 1000,
+      "target_met_local": true,
+      "samples": [
+        {
+          "operation": "enrollment_reservation",
+          "user": 0,
+          "round": 1,
+          "ms": 209.3289,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 0,
+          "round": 2,
+          "ms": 225.6106,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 0,
+          "round": 3,
+          "ms": 330.8964,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 0,
+          "round": 4,
+          "ms": 295.23,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 0,
+          "round": 5,
+          "ms": 170.9965,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 1,
+          "round": 1,
+          "ms": 135.7104,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 1,
+          "round": 2,
+          "ms": 211.0105,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 1,
+          "round": 3,
+          "ms": 344.7784,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 1,
+          "round": 4,
+          "ms": 112.0688,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 1,
+          "round": 5,
+          "ms": 316.7847,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 2,
+          "round": 1,
+          "ms": 314.4955,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 2,
+          "round": 2,
+          "ms": 246.8538,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 2,
+          "round": 3,
+          "ms": 196.3133,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 2,
+          "round": 4,
+          "ms": 258.6347,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 2,
+          "round": 5,
+          "ms": 93.2341,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 3,
+          "round": 1,
+          "ms": 111.1249,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 3,
+          "round": 2,
+          "ms": 139.3038,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 3,
+          "round": 3,
+          "ms": 100.7109,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 3,
+          "round": 4,
+          "ms": 32.0885,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 3,
+          "round": 5,
+          "ms": 372.0187,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 4,
+          "round": 1,
+          "ms": 9.5142,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 4,
+          "round": 2,
+          "ms": 166.2224,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 4,
+          "round": 3,
+          "ms": 86.6318,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 4,
+          "round": 4,
+          "ms": 377.4255,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 4,
+          "round": 5,
+          "ms": 526.7208,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 5,
+          "round": 1,
+          "ms": 267.8486,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 5,
+          "round": 2,
+          "ms": 282.2307,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 5,
+          "round": 3,
+          "ms": 69.1418,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 5,
+          "round": 4,
+          "ms": 156.4413,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 5,
+          "round": 5,
+          "ms": 246.445,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 6,
+          "round": 1,
+          "ms": 177.5945,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 6,
+          "round": 2,
+          "ms": 193.0183,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 6,
+          "round": 3,
+          "ms": 257.0723,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 6,
+          "round": 4,
+          "ms": 276.3562,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 6,
+          "round": 5,
+          "ms": 36.7312,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 7,
+          "round": 1,
+          "ms": 50.9797,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 7,
+          "round": 2,
+          "ms": 328.4459,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 7,
+          "round": 3,
+          "ms": 402.9651,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 7,
+          "round": 4,
+          "ms": 9.9277,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 7,
+          "round": 5,
+          "ms": 221.2334,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 8,
+          "round": 1,
+          "ms": 191.5064,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 8,
+          "round": 2,
+          "ms": 64.0139,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 8,
+          "round": 3,
+          "ms": 154.552,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 8,
+          "round": 4,
+          "ms": 312.9415,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 8,
+          "round": 5,
+          "ms": 143.4513,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 9,
+          "round": 1,
+          "ms": 252.5594,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 9,
+          "round": 2,
+          "ms": 309.5245,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 9,
+          "round": 3,
+          "ms": 214.8718,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 9,
+          "round": 4,
+          "ms": 127.1027,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 9,
+          "round": 5,
+          "ms": 340.366,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 10,
+          "round": 1,
+          "ms": 18.1933,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 10,
+          "round": 2,
+          "ms": 10.474,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 10,
+          "round": 3,
+          "ms": 36.6097,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 10,
+          "round": 4,
+          "ms": 177.958,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 10,
+          "round": 5,
+          "ms": 125.187,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 11,
+          "round": 1,
+          "ms": 65.3673,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 11,
+          "round": 2,
+          "ms": 125.5305,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 11,
+          "round": 3,
+          "ms": 286.7081,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 11,
+          "round": 4,
+          "ms": 49.0744,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 11,
+          "round": 5,
+          "ms": 427.1895,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 12,
+          "round": 1,
+          "ms": 412.0985,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 12,
+          "round": 2,
+          "ms": 269.2176,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 12,
+          "round": 3,
+          "ms": 387.4775,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 12,
+          "round": 4,
+          "ms": 335.2282,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 12,
+          "round": 5,
+          "ms": 68.6666,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 13,
+          "round": 1,
+          "ms": 295.6436,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 13,
+          "round": 2,
+          "ms": 108.2592,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 13,
+          "round": 3,
+          "ms": 8.8717,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 13,
+          "round": 4,
+          "ms": 140.4915,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 13,
+          "round": 5,
+          "ms": 267.1728,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 14,
+          "round": 1,
+          "ms": 82.4755,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 14,
+          "round": 2,
+          "ms": 46.4045,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 14,
+          "round": 3,
+          "ms": 129.6103,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 14,
+          "round": 4,
+          "ms": 191.7863,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 14,
+          "round": 5,
+          "ms": 289.7999,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 15,
+          "round": 1,
+          "ms": 395.4096,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 15,
+          "round": 2,
+          "ms": 366.1931,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 15,
+          "round": 3,
+          "ms": 53.6588,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 15,
+          "round": 4,
+          "ms": 64.5369,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 15,
+          "round": 5,
+          "ms": 15.994,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 16,
+          "round": 1,
+          "ms": 330.1349,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 16,
+          "round": 2,
+          "ms": 344.7775,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 16,
+          "round": 3,
+          "ms": 303.7141,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 16,
+          "round": 4,
+          "ms": 397.6941,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 16,
+          "round": 5,
+          "ms": 51.5842,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 17,
+          "round": 1,
+          "ms": 151.0091,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 17,
+          "round": 2,
+          "ms": 82.3184,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 17,
+          "round": 3,
+          "ms": 229.2926,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 17,
+          "round": 4,
+          "ms": 82.2864,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 17,
+          "round": 5,
+          "ms": 452.3299,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 18,
+          "round": 1,
+          "ms": 230.1501,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 18,
+          "round": 2,
+          "ms": 29.6513,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 18,
+          "round": 3,
+          "ms": 171.6387,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 18,
+          "round": 4,
+          "ms": 237.2653,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 18,
+          "round": 5,
+          "ms": 194.4649,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 19,
+          "round": 1,
+          "ms": 352.741,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 19,
+          "round": 2,
+          "ms": 408.2514,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 19,
+          "round": 3,
+          "ms": 444.921,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 19,
+          "round": 4,
+          "ms": 209.8441,
+          "ok": true,
+          "error": null
+        },
+        {
+          "operation": "enrollment_reservation",
+          "user": 19,
+          "round": 5,
+          "ms": 108.8739,
+          "ok": true,
+          "error": null
+        }
+      ]
+    }
+  },
+  "final": {
+    "courses": 100,
+    "groups": 300,
+    "enrollments": 3100,
+    "payment_attempts": 3100
+  },
+  "integrity": {
+    "overbooked_groups": 0,
+    "consistent": true
+  },
+  "limitations": [
+    "20 hilos locales, no sesiones web autenticadas.",
+    "La carga crece con las reservas exitosas.",
+    "Los usuarios de prueba son identidades ficticias; no valida existencia en módulo real.",
+    "Cumplimiento local de la meta no equivale a aceptación de rendimiento extremo a extremo."
+  ]
+}

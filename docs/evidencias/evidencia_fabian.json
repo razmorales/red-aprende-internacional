@@ -1,0 +1,419 @@
+{
+  "executed_at": "2026-11-27T20:38:58.442870+00:00",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.10",
+  "limitations": [
+    "Base temporal, datos e identidades ficticias.",
+    "Reloj inyectado en las pruebas de vencimiento; no se espera 30 minutos reales.",
+    "Sin autenticación ni interfaz definitiva; tiempos de funciones locales, no de pantalla.",
+    "Precio de 45.50 EUR elegido como dato ficticio.",
+    "Vencimiento exacto y bloqueo de duplicados: propuestas pendientes."
+  ],
+  "scenarios": [
+    {
+      "case": "Ultimo cupo concurrente",
+      "requirement": "RF-004 / CP-004",
+      "expected": "Una reserva y un rechazo; tras pagar, una confirmada y cero disponibles.",
+      "actual": {
+        "requests": [
+          {
+            "student": "estudiante-mx-demo",
+            "response": "reserved",
+            "enrollment": {
+              "id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+              "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+              "student_id": "estudiante-mx-demo",
+              "status": "reserved",
+              "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+              "expires_at": "2026-11-27T21:08:58.442870+00:00",
+              "updated_at": "2026-11-27T20:38:58.442870+00:00"
+            },
+            "payment": {
+              "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+              "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+              "amount_minor": 4550,
+              "currency": "EUR",
+              "status": "pending",
+              "created_at": "2026-11-27T20:38:58.442870+00:00",
+              "updated_at": "2026-11-27T20:38:58.442870+00:00",
+              "responded_at": null,
+              "simulated": 1
+            }
+          },
+          {
+            "student": "estudiante-co-demo",
+            "response": "full",
+            "message": "No hay cupo disponible en este grupo.",
+            "alternatives": [
+              {
+                "id": "49cb5712-8d59-4cc8-96c1-1c2b50f086c9",
+                "course_id": "0167975c-fc1e-4ffc-8127-798f934c4a78",
+                "name": "Madrid - alternativo",
+                "country": "ES",
+                "site_id": "MAD",
+                "timezone": "Europe/Madrid",
+                "capacity": 3,
+                "price_minor": 4550,
+                "currency": "EUR",
+                "available": 3
+              }
+            ]
+          }
+        ],
+        "after_reservation": {
+          "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+          "capacity": 1,
+          "occupied": 1,
+          "available": 0,
+          "statuses": {
+            "reserved": 1
+          }
+        },
+        "payment_result": {
+          "enrollment": {
+            "id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+            "student_id": "estudiante-mx-demo",
+            "status": "confirmed",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00"
+          },
+          "payment": {
+            "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+            "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00",
+            "responded_at": "2026-11-27T20:39:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "after_payment": {
+          "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+          "capacity": 1,
+          "occupied": 1,
+          "available": 0,
+          "statuses": {
+            "confirmed": 1
+          }
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "Moneda e importe en dos perfiles",
+      "requirement": "RF-003 / DAT-006 / CP-006",
+      "expected": "Estudiante extranjero paga 45.50 EUR ficticios y Administración consulta la misma operación.",
+      "actual": {
+        "offer": {
+          "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+          "amount_minor": 4550,
+          "currency": "EUR"
+        },
+        "initial_payment": {
+          "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+          "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+          "amount_minor": 4550,
+          "currency": "EUR",
+          "status": "pending",
+          "created_at": "2026-11-27T20:38:58.442870+00:00",
+          "updated_at": "2026-11-27T20:38:58.442870+00:00",
+          "responded_at": null,
+          "simulated": 1
+        },
+        "student": {
+          "enrollment": {
+            "id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+            "student_id": "estudiante-mx-demo",
+            "status": "confirmed",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00"
+          },
+          "payment": {
+            "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+            "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00",
+            "responded_at": "2026-11-27T20:39:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "site_admin": {
+          "enrollment": {
+            "id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+            "student_id": "estudiante-mx-demo",
+            "status": "confirmed",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00"
+          },
+          "payment": {
+            "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+            "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00",
+            "responded_at": "2026-11-27T20:39:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "student_country": "MX"
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "Cancelacion de inscripcion pagada",
+      "requirement": "RF-004 / DAT-006",
+      "expected": "Libera cupo y conserva pago aprobado original.",
+      "actual": {
+        "operation": {
+          "enrollment": {
+            "id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+            "student_id": "estudiante-mx-demo",
+            "status": "cancelled",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T20:40:58.442870+00:00"
+          },
+          "payment": {
+            "id": "71b0c6ac-a399-434f-a651-4ae603f0b379",
+            "enrollment_id": "4b3413f4-a05e-418f-9a68-3338d4fc92d9",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00",
+            "responded_at": "2026-11-27T20:39:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "group": {
+          "group_id": "19cb9af9-ec8d-48ea-97ce-4a820ff9c276",
+          "capacity": 1,
+          "occupied": 0,
+          "available": 1,
+          "statuses": {
+            "cancelled": 1
+          }
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "Pago rechazado",
+      "requirement": "RF-003 / RF-004 / CP-003",
+      "expected": "No confirma y libera el lugar.",
+      "actual": {
+        "operation": {
+          "enrollment": {
+            "id": "5980c7a2-320b-45c6-9e69-976db0ce7003",
+            "group_id": "62c04c3f-1435-48b8-ac87-4098d692e1b3",
+            "student_id": "estudiante-mx-demo",
+            "status": "rejected",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00"
+          },
+          "payment": {
+            "id": "786e5ffe-d582-47a8-9ec0-7cd2ed8852ef",
+            "enrollment_id": "5980c7a2-320b-45c6-9e69-976db0ce7003",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "rejected",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T20:39:58.442870+00:00",
+            "responded_at": "2026-11-27T20:39:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "group": {
+          "group_id": "62c04c3f-1435-48b8-ac87-4098d692e1b3",
+          "capacity": 1,
+          "occupied": 0,
+          "available": 1,
+          "statuses": {
+            "rejected": 1
+          }
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "Reserva vencida",
+      "requirement": "RF-004 / CP-004",
+      "expected": "La reserva deja de ocupar cupo y conserva intento.",
+      "actual": {
+        "operation": {
+          "enrollment": {
+            "id": "ef99194e-8afe-406e-abaf-01a19ec8bb2e",
+            "group_id": "b9f9992a-40f2-48d6-be78-a6c5177b2bd3",
+            "student_id": "estudiante-mx-demo",
+            "status": "expired",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T21:08:58.442870+00:00"
+          },
+          "payment": {
+            "id": "3bb127dc-2395-4921-aa05-a20ff46fbaa9",
+            "enrollment_id": "ef99194e-8afe-406e-abaf-01a19ec8bb2e",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "expired",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T21:08:58.442870+00:00",
+            "responded_at": null,
+            "simulated": 1
+          }
+        },
+        "group": {
+          "group_id": "b9f9992a-40f2-48d6-be78-a6c5177b2bd3",
+          "capacity": 1,
+          "occupied": 0,
+          "available": 1,
+          "statuses": {
+            "expired": 1
+          }
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "case": "Pago aprobado despues del vencimiento",
+      "requirement": "RF-003 / RF-004 / CP-003",
+      "expected": "Se registra sin confirmar; el nuevo estudiante mantiene su lugar.",
+      "actual": {
+        "late_payment": {
+          "enrollment": {
+            "id": "ef99194e-8afe-406e-abaf-01a19ec8bb2e",
+            "group_id": "b9f9992a-40f2-48d6-be78-a6c5177b2bd3",
+            "student_id": "estudiante-mx-demo",
+            "status": "expired",
+            "reserved_at": "2026-11-27T20:38:58.442870+00:00",
+            "expires_at": "2026-11-27T21:08:58.442870+00:00",
+            "updated_at": "2026-11-27T21:08:58.442870+00:00"
+          },
+          "payment": {
+            "id": "3bb127dc-2395-4921-aa05-a20ff46fbaa9",
+            "enrollment_id": "ef99194e-8afe-406e-abaf-01a19ec8bb2e",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved_late",
+            "created_at": "2026-11-27T20:38:58.442870+00:00",
+            "updated_at": "2026-11-27T21:09:58.442870+00:00",
+            "responded_at": "2026-11-27T21:09:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "second_payment": {
+          "enrollment": {
+            "id": "238ce080-1408-4b2c-a376-71dbac34a351",
+            "group_id": "b9f9992a-40f2-48d6-be78-a6c5177b2bd3",
+            "student_id": "estudiante-co-demo",
+            "status": "confirmed",
+            "reserved_at": "2026-11-27T21:09:58.442870+00:00",
+            "expires_at": "2026-11-27T21:39:58.442870+00:00",
+            "updated_at": "2026-11-27T21:09:58.442870+00:00"
+          },
+          "payment": {
+            "id": "901c5f9b-ff37-4bae-ad9c-1e0322f0414f",
+            "enrollment_id": "238ce080-1408-4b2c-a376-71dbac34a351",
+            "amount_minor": 4550,
+            "currency": "EUR",
+            "status": "approved",
+            "created_at": "2026-11-27T21:09:58.442870+00:00",
+            "updated_at": "2026-11-27T21:09:58.442870+00:00",
+            "responded_at": "2026-11-27T21:09:58.442870+00:00",
+            "simulated": 1
+          }
+        },
+        "group": {
+          "group_id": "b9f9992a-40f2-48d6-be78-a6c5177b2bd3",
+          "capacity": 1,
+          "occupied": 1,
+          "available": 0,
+          "statuses": {
+            "confirmed": 1,
+            "expired": 1
+          }
+        }
+      },
+      "result": "PASS"
+    }
+  ],
+  "production_metrics": {
+    "course_query": {
+      "n": 20,
+      "mean_ms": 0.145,
+      "median_ms": 0.136,
+      "max_ms": 0.197,
+      "samples_ms": [
+        0.197,
+        0.176,
+        0.136,
+        0.143,
+        0.129,
+        0.133,
+        0.133,
+        0.126,
+        0.163,
+        0.122,
+        0.139,
+        0.129,
+        0.135,
+        0.131,
+        0.126,
+        0.147,
+        0.133,
+        0.167,
+        0.159,
+        0.184
+      ]
+    },
+    "enrollment_reservation": {
+      "n": 20,
+      "mean_ms": 7.335,
+      "median_ms": 7.049,
+      "max_ms": 8.617,
+      "samples_ms": [
+        6.716,
+        7.172,
+        8.104,
+        6.963,
+        6.833,
+        7.417,
+        6.947,
+        6.992,
+        7.102,
+        6.965,
+        8.617,
+        6.92,
+        7.093,
+        7.006,
+        6.946,
+        8.261,
+        8.299,
+        6.914,
+        7.243,
+        8.189
+      ]
+    },
+    "environment": "SQLite local; una consulta y reserva por iteración, 20 iteraciones.",
+    "target": "Pendiente de cotejar meta exacta del SRS."
+  },
+  "defects": {
+    "scenario_failures": 0,
+    "note": "Sin fallos en estos escenarios; no sustituye el registro de defectos abiertos por gravedad."
+  }
+}
